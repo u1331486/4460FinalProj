@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('teams/', views.team_list, name='team_list'),
-    # Define other URLs for CRUD operations
+    # Define other URLs for CRUD operation
 ]
