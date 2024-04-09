@@ -16,7 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from athletic_department import views
+
+#urlpatterns = [
+#    path('admin/', admin.site.urls),
+#    path('athletic_department/teams/', views.team_list, name='team_list'),
+#    path('athletic_department/homepage/', views.homepage, name='homepage'),
+#]
+
+#from django.urls import path
+#from . import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('teams/', views.team_list, name='team_list'),
+    path('homepage/', views.homepage, name='homepage'),
+    # Define other URLs for CRUD operation
 ]
