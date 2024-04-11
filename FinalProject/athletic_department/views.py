@@ -1,9 +1,13 @@
-from django.shortcuts import render
-from .models import Team
+from django.shortcuts import render, redirect
+from .models import Team, Employee
+from django.views.generic import CreateView, UpdateView, DeleteView, ListView
+
+
+from .forms import TeamForm, EmployeeForm
+def homepage(request):
+    return render(request, 'athletic_department/Homepage.html')
 
 def team_list(request):
     teams = Team.objects.all()
     return render(request, 'athletic_department/team_list.html', {'teams': teams})
 
-def homepage(request):
-    return render(request, 'athletic_department/Homepage.html')
