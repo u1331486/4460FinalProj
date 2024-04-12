@@ -40,6 +40,3 @@ class IncomeForm(forms.ModelForm):
     class Meta:
         model = Income
         fields = '__all__'
-
-
-#mic

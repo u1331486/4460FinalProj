@@ -36,5 +36,9 @@ urlpatterns = [
     path('teams/', views.team_list, name='team_list'),
     path('homepage/', views.homepage, name='homepage'),
     path('', include('athletic_department.urls')),
+    path('athletic_department/', include('athletic_department.urls')),
+
+
+
     # Define other URLs for CRUD operation
 ]

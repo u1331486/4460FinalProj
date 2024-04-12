@@ -1,6 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
-from .views import TeamCreateView, TeamUpdateView, TeamDeleteView
+from .views import TeamCreateView,TeamUpdateView,TeamDeleteView
 
 
 urlpatterns = [
@@ -10,8 +10,8 @@ urlpatterns = [
     path('teams/<int:pk>/update/', TeamUpdateView.as_view(), name='team_update'),
     path('teams/<int:pk>/delete/', TeamDeleteView.as_view(), name='team_delete'),
 
-
     path('homepage/', views.homepage, name='homepage'),
+
     #path('add_employee/', views.add_employee, name='add_employee'),
 
     # Define other URLs for CRUD operation
