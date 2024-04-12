@@ -9,12 +9,6 @@ class TeamForm(forms.ModelForm):
 class EmployeeForm(forms.ModelForm):
     class Meta:
         model = Employee
-        fields = ['employeeid', 'lastname', 'firstname', 'title', 'address', 'start_date', 'end_date', 'type', 'cost']
-
-
-class EmployeeForm(forms.ModelForm):
-    class Meta:
-        model = Employee
         fields = '__all__'
 
 class AthleteForm(forms.ModelForm):
