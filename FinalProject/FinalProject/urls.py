@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from athletic_department import views
 from django.views import View
+from athletic_department.views import AthleteListView
+
 
 
 #urlpatterns = [
@@ -33,11 +35,15 @@ from django.views import View
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('teams/', views.team_list, name='team_list'),
-    path('homepage/', views.homepage, name='homepage'),
     path('', include('athletic_department.urls')),
-    path('athletic_department/', include('athletic_department.urls')),
 
+    path('homepage/', views.homepage, name='homepage'),
+    path('teams/', include('athletic_department.urls')),  # Add this line to include the team-related URLs
+    path('athletes/', AthleteListView.as_view(), name='athlete_list'),  # Add this line
+
+    
+
+  
 
 
     # Define other URLs for CRUD operation

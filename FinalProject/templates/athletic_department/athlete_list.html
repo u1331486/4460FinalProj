@@ -1,0 +1,20 @@
+<!-- athelte_list.html -->
+<!-- athlete_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athlete List</title>
+</head>
+<body>
+    <h1>Athlete List</h1>
+    <ul>
+        {% for athlete in athletes %}
+            <li><a href="{% url 'athlete_detail' athlete.pk %}">{{ athlete.firstname }} {{ athlete.lastname }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'athlete_create' %}"><button>Add Athlete</button></a>
+</body>
+</html>

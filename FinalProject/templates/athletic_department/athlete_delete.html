@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Create Team{% endblock %}</title>
+    <title>Delete Athlete</title>
 </head>
 <body>
-    <h1>{% block heading %}Create Team{% endblock %}</h1>
+    <h1>Delete Athlete</h1>
+    <p>Are you sure you want to delete {{ athlete.firstname }} {{ athlete.lastname }}?</p>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
+        <button type="submit">Confirm Delete</button>
     </form>
 </body>
 </html>
