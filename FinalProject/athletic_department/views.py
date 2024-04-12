@@ -11,3 +11,18 @@ def team_list(request):
     teams = Team.objects.all()
     return render(request, 'athletic_department/team_list.html', {'teams': teams})
 
+class TeamCreateView(CreateView):
+    model = Team
+    form_class = TeamForm
+    template_name = 'athletic_department/team_form.html'
+    success_url = '/teams/'
+
+class TeamUpdateView(UpdateView):
+    model = Team
+    form_class = TeamForm
+    template_name = 'athletic_department/team_form.html'
+    success_url = '/teams/'
+
+class TeamDeleteView(DeleteView):
+    model = Team
+    success_url = '/teams/'
